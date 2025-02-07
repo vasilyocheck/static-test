@@ -25,11 +25,8 @@ function draw() {
   const ctx = canvas.getContext('2d')
   ctx.fillStyle = "green";
 
-
-
   ctx.beginPath();
-  ctx.moveTo(790, 790); // Начальная точка (x, y)
-
+  ctx.moveTo(790, 790);
   
   ctx.lineTo(790, 10);
   ctx.setLineDash([10, 5]);
@@ -37,32 +34,24 @@ function draw() {
   ctx.moveTo(790, 790);
   ctx.lineTo(10, 790);
 
-  ctx.lineWidth = 1; // Толщина линии
-  ctx.strokeStyle = 'black'; // Цвет линии
+  ctx.lineWidth = 1;
+  ctx.strokeStyle = 'black';
 
-  // Нарисуйте линию
   ctx.stroke();
 
-  // Установите начальную точку для рисования круга
   const centerX = 790 - currentRadius;
   const centerY = 790 - currentRadius;
   const radius = currentRadius;
 
-  // Начните новый путь
   ctx.beginPath();
-  // Рисуем круг
+
   ctx.arc(centerX, centerY, radius, 0, Math.PI * 2, false);
   ctx.setLineDash([]);
 
-  // Установите стиль заливки
   ctx.fillStyle = 'blue';
-  // Заливаем круг
 
-
-  // Установите стиль обводки
   ctx.lineWidth = 1;
   ctx.strokeStyle = 'blue';
-  // Обводим круг
   ctx.stroke();
 
   const innerRadius = cornerCircle(currentRadius)
@@ -71,20 +60,12 @@ function draw() {
   const innerCenterY = 790 - innerRadius;
 
 
-  // Начните новый путь
   ctx.beginPath();
-  // Рисуем круг
   ctx.arc(innerCenterX, innerCenterY, innerRadius, 0, Math.PI * 2, false);
 
-  // Установите стиль заливки
 
-  // Заливаем круг
-
-
-  // Установите стиль обводки
   ctx.lineWidth = 1;
   ctx.strokeStyle = 'red';
-  // Обводим круг
   ctx.stroke();
 
 }
